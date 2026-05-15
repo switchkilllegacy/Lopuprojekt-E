@@ -1,0 +1,93 @@
+/* ÜLDISED SEADED JA VÄRVID */
+:root {
+  --primary: #cc2200; /* Punane põhivärv */
+  --dark-bg: #0d0d0d; /* Tume taustavärv */
+  --text-gray: #a0a0a0; /* Hall abi-tekst */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--dark-bg);
+  color: white;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* NAVIGATSIOON */
+.navbar {
+  background-color: rgba(13, 13, 13, 0.95);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* 1. HOVER EFEKT: Menüü lingid värvuvad punaseks */
+.nav-link {
+  color: white !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+/* HERO SEKTSIOON (Taustapilt ja tekst pildil) */
+.hero {
+  /* Kasutame gradienti pildi peal, et tekst oleks loetav */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('pildid/kontsert.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--text-gray);
+}
+
+/* 2. HOVER EFEKT: Nupu värvivahetus ja piirjoon */
+.btn-custom {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-custom:hover {
+  background-color: transparent;
+  color: var(--primary);
+  box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+/* GALERII (CSS Grid süsteem) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}

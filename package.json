@@ -1,0 +1,21 @@
+{
+  "name": "lopuprojekt-e",
+  "version": "1.0.0",
+  "description": "See on minu kooliprojekt, mille eesmärk oli luua toimiv ja visuaalselt ühtne veebileht rock- ja metalmuusika kohta. Leht on ehitatud kasutades HTML-i, CSS-i ja veidi Bootstrap abi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/switchkilllegacy/Lopuprojekt-E.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/switchkilllegacy/Lopuprojekt-E/issues"
+  },
+  "homepage": "https://github.com/switchkilllegacy/Lopuprojekt-E#readme"
+}
