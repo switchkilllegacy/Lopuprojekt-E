@@ -110,6 +110,15 @@ h3 {
   object-fit: cover;
 }
 
+/* 4. HOVER EFFEKT: Artistide nimed muudavad värvi hiirt peale hoides */
+.artist-link {
+  transition: color 0.3s ease;
+}
+
+.artist-link:hover {
+  color: var(--primary) !important;
+}
+
 /* AJALUGU */
 .accordion-button:not(.collapsed) {
   color: var(--primary) !important;
@@ -149,7 +158,7 @@ h3 {
 .custom-input {
   background-color: #1a1a1a !important;
   border: 1px solid #333 !important;
-  color: #ffff !important;
+  color: #ffffff !important;
   border-radius: 4px !important;
   padding: 12px !important;
   transition: all 0.3s ease;
