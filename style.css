@@ -92,6 +92,24 @@ h3 {
   gap: 30px;
 }
 
+.band-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* 3. HOVER EFEKT: Kaart kerkib ja muutub nähtavamaks */
+.band-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(204, 34, 0, 0.2);
+}
+
+.band-card img {
+  height: 250px;
+  object-fit: cover;
+}
+
 /* AJALUGU */
 .accordion-button:not(.collapsed) {
   color: var(--primary) !important;
@@ -109,7 +127,7 @@ h3 {
 
 .accordion-body {
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
 .accordion-collapse.show .accordion-body {
@@ -120,4 +138,35 @@ h3 {
 .accordion-button:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+/* SISESTUSVORM */
+.container-form {
+  max-width: 600px;
+}
+
+/* Sisendväljend */
+.custom-input {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: #ffff !important;
+  border-radius: 4px !important;
+  padding: 12px !important;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 8px rgba(204, 34, 0, 0.4) !important;
+}
+
+.custom-input::placeholder {
+  color: white !important;
+}
+
+/* Toast */
+.toast {
+  background-color: #1a1a1a !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
 }

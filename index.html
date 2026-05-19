@@ -108,7 +108,7 @@
 
     <section id="history" class="bg-light text-dark py-5">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-start">
           <div class="col-md-7">
             <h2 class="section-title text-dark">Ajalugu ja Mõju</h2>
             <p>
@@ -133,7 +133,7 @@
                     data-bs-toggle="collapse"
                     data-bs-target="#genre1"
                   >
-                    Rock &amp; Roll — 1950ndad
+                    Rock & Roll — 1950ndad
                   </button>
                 </h2>
                 <div
@@ -289,12 +289,107 @@
       </div>
     </section>
 
-    <section id="join"></section>
+    <section id="join" class="py-5">
+      <div class="container container-form">
+        <h2 class="section-title text-center">JOIN THE PIT</h2>
+        <p class="text-center mb-4 opacity-75">
+          Saa värskeimad uudised, kontserdiinfo ja eksklusiivsed pakkumised otse
+          oma meilile.
+        </p>
+
+        <form id="pitForm" novalidate>
+          <div class="mb-3">
+            <label for="inputName" class="form-label text-white">Nimi</label>
+            <input
+              type="text"
+              class="form-control custom-input"
+              id="inputName"
+              placeholder="Sinu nimi"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label text-white"
+              >E-maili aadress</label
+            >
+            <input
+              type="email"
+              class="form-control custom-input"
+              id="inputEmail"
+              placeholder="Sinu e-post"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="selectGenre" class="form-label text-white"
+              >Lemmikžanr</label
+            >
+            <select class="form-select custom-input" id="selectGenre">
+              <option selected disabled value="">Vali oma stiil...</option>
+              <option value="rock">Klassikaline Rock / Hard Rock</option>
+              <option value="heavy">Heavy Metal / Thrash Metal</option>
+              <option value="grunge">Grunge / Alternative</option>
+              <option value="nu">Nu-Metal / Core</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-custom w-100 border-0">
+            Roki kaasa!
+          </button>
+        </form>
+      </div>
+    </section>
 
     <footer class="py-4 text-center border-top border-secondary opacity-50">
       <p>&copy; 2026 The Distortion Hub | Autor: Marek Tallinn</p>
     </footer>
 
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      style="z-index: 1060"
+    >
+      <div
+        id="liveToast"
+        class="toast align-items-center text-white border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <strong class="text-danger">Sarved püsti! 🤘</strong> Täname
+            liitumast. Kohtume pitis!
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document
+        .getElementById('pitForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault(); // Peatab lehe uuesti laadimise
+
+          // Kontrollib, kas kohustuslikud väljad on täidetud
+          if (this.checkValidity()) {
+            // Leiab ja kuvab Bootstrapi Toasti
+            const toastElement = document.getElementById('liveToast');
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+
+            // Tühjendab vormi pärast edukat sisestust
+            this.reset();
+          } else {
+            this.classList.add('was-validated');
+          }
+        });
+    </script>
   </body>
 </html>
