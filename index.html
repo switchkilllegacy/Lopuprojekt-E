@@ -19,13 +19,27 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-md sticky-top">
       <div class="container">
         <!-- Lehe nimi -->
         <a class="navbar-brand text-white" href="#">THE DISTORTION HUB</a>
-        <div class="ms-auto">
-          <!-- Navigatsioonilingid paremal -->
-          <ul class="navbar-nav flex-row gap-3">
+        <!-- Hamburger nupp mobiilile -->
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Ava menüü"
+        >
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <!-- Collapse wrapper mobiilile -->
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul
+            class="navbar-nav ms-auto flex-row flex-lg-row gap-3 mt-3 mt-lg-0"
+          >
             <!-- Nuppude viited -->
             <li class="nav-item">
               <a class="nav-link" href="#gallery">Bändid</a>
