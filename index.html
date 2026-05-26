@@ -4,26 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Distortion Hub</title>
-    <!-- Bootstrap import -->
+    <!-- Bootstrap – annab meile valmis komponendid ja grid süsteemi -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Fontide import -->
+    <!-- Kaks fonti: Bebas Neue pealkirjadeks, Inter põhitekstiks -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Kohandatud stiilileht -->
+    <!-- Meie oma stiilid, mis kirjutavad vajaduse korral Bootstrapi üle -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- ===================== NAVIGATSIOON ===================== -->
+    <!-- sticky-top hoiab menüü ekraani ülaosas ka alla kerides -->
     <nav class="navbar navbar-expand-md sticky-top">
       <div class="container">
-        <!-- Lehe nimi -->
+        <!-- Lehe nimi vasakul – klikk viib tagasi lehe tippu -->
         <a class="navbar-brand text-white" href="#">THE DISTORTION HUB</a>
-        <!-- Hamburger nupp mobiilile -->
+
+        <!-- Hamburger nupp ilmub ainult mobiilil, kui menüü on kokku pandud -->
         <button
           class="navbar-toggler border-0"
           type="button"
@@ -33,40 +35,47 @@
           aria-expanded="false"
           aria-label="Ava menüü"
         >
+          <!-- filter: invert(1) muudab tumeda ikooni valgeks -->
           <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
         </button>
-        <!-- Collapse wrapper mobiilile -->
+
+        <!-- Menüü lingid – mobiilil peidetud, avaneb hamburgerist klikkides -->
         <div class="collapse navbar-collapse" id="navMenu">
           <ul
             class="navbar-nav ms-auto flex-row flex-lg-row gap-3 mt-3 mt-lg-0"
           >
-            <!-- Nuppude viited -->
+            <!-- Siselingid kerivad õige sektsiooni juurde -->
             <li class="nav-item">
               <a class="nav-link" href="#gallery">Bändid</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#history">Ajalugu</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#join">Liitu</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#join">Liitu</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- ===================== HERO ===================== -->
+    <!-- Täisekraani sissejuhatus – taust on kontserdifoto, tekst on peal -->
     <header class="hero">
       <div class="container text-center">
-        <!-- Pealkiri ja alapealkiri -->
+        <!-- Peamine pealkiri, font skaleerub ekraani järgi (clamp CSS-is) -->
         <h1>AVASTA ROCK & METAL</h1>
+        <!-- Lühike kirjeldus, mis selgitab lehe eesmärki -->
         <p class="hero-subtitle">
           Su stardipakett rokkmuusikasse – bändid, lood, ajalugu
         </p>
-        <!-- Viitenupp, viib galeriisse -->
+        <!-- Nupp kerib kasutaja galerii sektsiooni juurde -->
         <a href="#gallery" class="btn-custom">Tutvu bändidega</a>
       </div>
     </header>
 
-    <!-- Gallerii -->
+    <!-- ===================== GALERII ===================== -->
+    <!-- Kolm bändikaarti CSS Grid'is kõrvuti (mobiilil üksteise all) -->
     <section id="gallery" class="container py-5">
       <h2 class="section-title text-center">Legendaarsed Artistid</h2>
       <p class="text-center mb-5">
@@ -74,18 +83,18 @@
         maailma. Tutvu kolme ikooni looga.
       </p>
 
-      <!-- Gallerii grid'i süsteem -->
+      <!-- Grid paigutab kaardid automaatselt 3 veergu (vt style.css) -->
       <div class="gallery-grid">
-        <!-- Bändide tutvustused -->
-
         <!-- Bändikaart: Nirvana -->
         <article class="band-card">
+          <!-- alt-tekst kirjeldab pilti ekraanilugejatele -->
           <img
             src="pildid/nirvana.jpeg"
             alt="Nirvana bändi foto - Dave Grohl"
             class="card-img-top"
           />
           <div class="card-body p-4">
+            <!-- Nimi on välislink Wikipediasse, avaneb uuel vahelehel -->
             <h3>
               <a
                 href="https://en.wikipedia.org/wiki/Nirvana_(band)"
@@ -158,11 +167,12 @@
       </div>
     </section>
 
-    <!-- Ajalugu -->
+    <!-- ===================== AJALUGU ===================== -->
+    <!-- Hele taust eristab sektsiooni visuaalselt ülejäänud lehest -->
     <section id="history" class="bg-light text-dark py-5">
       <div class="container">
         <div class="row align-items-start">
-          <!-- Vasakpoolne tekstiblokk -->
+          <!-- Vasakul: sissejuhatav tekst rokkmuusika ajaloost -->
           <div class="col-md-7">
             <h2 class="section-title text-dark">Ajalugu ja Mõju</h2>
             <p>
@@ -177,9 +187,10 @@
               üle kogu maailma suurte festivalide ja kontserdielamuste kaudu.
             </p>
           </div>
-          <!-- Parempoolne accordion žanrite jaoks -->
+
+          <!-- Paremal: accordion, kus iga žanr avaneb klikkides -->
           <div class="col-md-5 mt-4 mt-md-0">
-            <!-- Accordion ja rippmenüü -->
+            <!-- data-bs-parent tagab, et korraga on avatud ainult üks žanr -->
             <div class="accordion accordion-flush" id="genreAccordion">
               <!-- Žanr 1: Rock & Roll -->
               <div class="accordion-item bg-transparent border-secondary">
@@ -349,11 +360,13 @@
           </div>
         </div>
 
+        <!-- YouTube video rokkmuusika ajaloost, 16:9 kuvasuhe -->
         <div class="row mt-5 pt-3">
           <div class="col-12 col-lg-8 mx-auto">
             <h3 class="text-center text-dark mb-4">
               Vaata lähemalt: Rokkmuusika sünd ja areng
             </h3>
+            <!-- ratio-16x9 tagab, et video skaleerub ekraaniga kaasa -->
             <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
               <iframe
                 src="https://www.youtube.com/embed/jjkXsvTHF_0"
@@ -376,7 +389,8 @@
       </div>
     </section>
 
-    <!-- Liitumisvorm -->
+    <!-- ===================== LIITUMISVORM ===================== -->
+    <!-- Uudiskirja vorm – kogub nime, e-posti ja lemmikžanri -->
     <section id="join" class="py-5">
       <div class="container container-form">
         <h2 class="section-title text-center">JOIN THE PIT</h2>
@@ -385,9 +399,9 @@
           oma meilile.
         </p>
 
-        <!-- Sisestus kast -->
+        <!-- novalidate – kasutame oma valideerimist, mitte brauseri vaikimisi -->
         <form id="pitForm" novalidate>
-          <!-- Nime väli -->
+          <!-- Nime väli – kohustuslik -->
           <div class="mb-3">
             <label for="inputName" class="form-label text-white">Nimi</label>
             <input
@@ -398,7 +412,8 @@
               required
             />
           </div>
-          <!-- E-posti väli -->
+
+          <!-- E-posti väli – kohustuslik, brauser kontrollib formaati -->
           <div class="mb-3">
             <label for="inputEmail" class="form-label text-white"
               >E-maili aadress</label
@@ -411,12 +426,12 @@
               required
             />
           </div>
-          <!-- Žanri valik -->
+
+          <!-- Rippmenüü žanri valimiseks – valikuline -->
           <div class="mb-4">
             <label for="selectGenre" class="form-label text-white"
               >Lemmikžanr</label
             >
-            <!-- Rippmenüü -->
             <select class="form-select custom-input" id="selectGenre">
               <option selected disabled value="">Vali oma stiil...</option>
               <option value="rock">Klassikaline Rock / Hard Rock</option>
@@ -425,7 +440,8 @@
               <option value="nu">Nu-Metal / Core</option>
             </select>
           </div>
-          <!-- Esitusnupp -->
+
+          <!-- Esitusnupp – käivitab allpool oleva JS valideerimise -->
           <button type="submit" class="btn-custom w-100 border-0">
             Roki kaasa!
           </button>
@@ -433,17 +449,17 @@
       </div>
     </section>
 
-    <!-- Jalus -->
+    <!-- ===================== JALUS ===================== -->
     <footer class="py-4 text-center border-top border-secondary opacity-50">
       <p>&copy; 2026 The Distortion Hub | Autor: Marek Tallinn</p>
     </footer>
 
-    <!-- Toast teavitus -->
+    <!-- ===================== TOAST TEAVITUS ===================== -->
+    <!-- Ilmub ekraani paremasse allnurka pärast vormi edukat täitmist -->
     <div
       class="toast-container position-fixed bottom-0 end-0 p-3"
       style="z-index: 1060"
     >
-      <!-- Edukas liitumine kuvab selle toasti -->
       <div
         id="liveToast"
         class="toast align-items-center text-white border-0"
@@ -456,7 +472,7 @@
             <strong class="text-danger">Sarved püsti! 🤘</strong> Täname
             liitumast. Kohtume pitis!
           </div>
-          <!-- Sulgemise nupp -->
+          <!-- X-nupp sulgeb toasti käsitsi -->
           <button
             type="button"
             class="btn-close btn-close-white me-2 m-auto"
@@ -467,26 +483,27 @@
       </div>
     </div>
 
+    <!-- Bootstrap JS – vajalik accordioni, hamburger menüü ja toasti jaoks -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JS toasti jaoks -->
+    <!-- Vormi valideerimine ja toasti kuvamine -->
     <script>
       document
         .getElementById('pitForm')
         .addEventListener('submit', function (event) {
           event.preventDefault(); // Peatab lehe uuesti laadimise
 
-          // Kontrollib, kas kohustuslikud väljad on täidetud
+          // Kontrollib, kas kohustuslikud väljad (nimi, e-post) on täidetud
           if (this.checkValidity()) {
-            // Kuvab Bootstrapi Toasti
+            // Kõik korras – näita tänusõnumit ekraani nurgas
             const toastElement = document.getElementById('liveToast');
             const toast = new bootstrap.Toast(toastElement);
             toast.show();
 
-            // Tühjendab vormi pärast edukat sisestust
+            // Tühjenda vorm, et kasutaja saaks uuesti alustada
             this.reset();
           } else {
-            // Lisab Bootstrap valideerimise klassid veateadete kuvamiseks
+            // Midagi puudub – Bootstrap lisab punased veaääred väljadele
             this.classList.add('was-validated');
           }
         });

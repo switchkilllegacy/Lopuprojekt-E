@@ -1,10 +1,12 @@
-/* ÜLDISED SEADED JA VÄRVID */
+/*  ÜLDISED SEADED JA VÄRVID  */
+/* CSS muutujad – kui tahad värvi muuta, piisab ühest kohast */
 :root {
-  --primary: #cc2200; /* Punane põhivärv */
-  --dark-bg: #0d0d0d; /* Tume taustavärv */
-  --text-gray: #a0a0a0; /* Hall abi-tekst */
+  --primary: #cc2200; /* Punane põhivärv, kasutusel nuppudel ja pealkirjadel */
+  --dark-bg: #0d0d0d; /* Peaaegu must taustavärv kogu lehel */
+  --text-gray: #a0a0a0; /* Pehme hall vähem tähtsa teksti jaoks */
 }
 
+/* Lehe põhistiil – font, taust ja reavahe kõikjal */
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--dark-bg);
@@ -12,6 +14,7 @@ body {
   line-height: 1.6;
 }
 
+/* Kõik pealkirjad saavad Bebas Neue fondi – annab rockile omase tunde */
 h1,
 h2,
 h3 {
@@ -19,19 +22,21 @@ h3 {
   letter-spacing: 2px;
 }
 
+/* Sektsiooni pealkirjad (nt "Legendaarsed Artistid") – suured ja punased */
 .section-title {
   font-size: 3rem;
   color: var(--primary);
   margin-bottom: 20px;
 }
 
-/* NAVIGATSIOON */
+/* ===================== NAVIGATSIOON ===================== */
+/* Tume poolläbipaistev riba, punane joon all eristab sisu heroest */
 .navbar {
   background-color: rgba(13, 13, 13, 0.95);
   border-bottom: 2px solid var(--primary);
 }
 
-/* 1. HOVER EFEKT: Menüü lingid värvuvad punaseks */
+/* 1. HOVER EFEKT: Menüülingid muutuvad valgelt punaseks hiirega peale minnes */
 .nav-link {
   color: white !important;
   text-transform: uppercase;
@@ -43,30 +48,33 @@ h3 {
   color: var(--primary) !important;
 }
 
-/* HERO SEKTSIOON (Taustapilt ja tekst pildil) */
+/* ===================== HERO SEKTSIOON ===================== */
+/* Kontserdifoto taustaks, tumendusgradiendiga et valge tekst loetav oleks */
 .hero {
-  /* Kasutame gradienti pildi peal, et tekst oleks loetav */
   background:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('pildid/kontsert.jpg') no-repeat center center/cover;
+    url('pildid/kontsert.jpg') no-repeat center center / cover;
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* clamp() skaleerib fondi automaatselt – töötab nii mobiilil kui surel monitoril */
 .hero h1 {
   font-size: clamp(3rem, 8vw, 5rem);
   margin-bottom: 10px;
 }
 
+/* Alapealkiri on tahtlikult heledam, et H1 rohkem silma paistaks */
 .hero-subtitle {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: var(--text-gray);
 }
 
-/* 2. HOVER EFEKT: Nupu värvivahetus ja piirjoon */
+/* ===================== NUPP ===================== */
+/* 2. HOVER EFEKT: Täidetud punane nupp muutub läbipaistvaks punase äärisega */
 .btn-custom {
   background-color: var(--primary);
   color: white;
@@ -82,16 +90,19 @@ h3 {
 .btn-custom:hover {
   background-color: transparent;
   color: var(--primary);
+  /* box-shadow inset joonistab äärise seest, nii et nupu suurus ei muutu */
   box-shadow: inset 0 0 0 2px var(--primary);
 }
 
-/* GALERII (CSS Grid süsteem) */
+/* ===================== GALERII ===================== */
+/* CSS Grid paigutab bändikaardid automaatselt 3 võrdse laiusega veergu */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
+/* Üksik bändikaart – tume taust, ümarad nurgad */
 .band-card {
   background-color: #1a1a1a;
   border-radius: 8px;
@@ -99,18 +110,19 @@ h3 {
   transition: transform 0.3s ease;
 }
 
-/* 3. HOVER EFEKT: Kaart kerkib ja muutub nähtavamaks */
+/* 3. HOVER EFEKT: Kaart kerkib üles ja saab punaka varju alla */
 .band-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(204, 34, 0, 0.2);
 }
 
+/* Kõik bändipildid on sama kõrgusega, object-fit lõikab ilma moonutamata */
 .band-card img {
   height: 250px;
   object-fit: cover;
 }
 
-/* 4. HOVER EFFEKT: Artistide nimed muudavad värvi hiirt peale hoides */
+/* 4. HOVER EFEKT: Artisti nimi muutub valgelt punaseks hiirega peale minnes */
 .artist-link {
   transition: color 0.3s ease;
 }
@@ -119,21 +131,23 @@ h3 {
   color: var(--primary) !important;
 }
 
-/* AJALUGU */
+/* ===================== AJALUGU – ACCORDION ===================== */
+/* Avatud accordion nupp saab punase värvi, taust jääb läbipaistvaks */
 .accordion-button:not(.collapsed) {
   color: var(--primary) !important;
   background-color: transparent !important;
   box-shadow: none;
-  padding-left: 1.5rem;
+  padding-left: 1.5rem; /* Väike nihe annab visuaalse sügavuse tunde */
 }
 
-/* Accordion animatsioon */
+/* Accordion nupp liigub sujuvalt avamisel */
 .accordion-button {
   transition:
     color 0.3s ease,
     padding-left 0.3s ease;
 }
 
+/* Sisu ilmub sujuvalt, mitte järsku */
 .accordion-body {
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -143,18 +157,19 @@ h3 {
   opacity: 1;
 }
 
-/* Eemalda sinine kast */
+/* Bootstrap lisab vaikimisi sinise fookuskasti – eemaldame, sest see ei sobi disaini */
 .accordion-button:focus {
   outline: none !important;
   box-shadow: none !important;
 }
 
-/* SISESTUSVORM */
+/* ===================== LIITUMISVORM ===================== */
+/* Vorm on ekraani keskel, max-width hoiab selle loetavana laial ekraanil */
 .container-form {
   max-width: 600px;
 }
 
-/* Sisendväljend */
+/* Kõik sisendväljad (tekst, email, select) jagavad sama tumeda stiili */
 .custom-input {
   background-color: #1a1a1a !important;
   border: 1px solid #333 !important;
@@ -164,41 +179,44 @@ h3 {
   transition: all 0.3s ease;
 }
 
+/* Fookuses saab väli punase äärise ja pehme punase kuma */
 .custom-input:focus {
   border-color: var(--primary) !important;
   box-shadow: 0 0 8px rgba(204, 34, 0, 0.4) !important;
 }
 
+/* Placeholder tekst on valge, et tumeda taustaga kontrasteeruks */
 .custom-input::placeholder {
   color: white !important;
 }
 
-/* Toast */
+/* ===================== TOAST TEAVITUS ===================== */
+/* Väike hüpikaken ekraani nurgas, mis kinnitab edukat liitumist */
 .toast {
   background-color: #1a1a1a !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   font-family: 'Inter', sans-serif;
 }
 
-/* MOBIILVAADE */
-
-/* Galerii: 3 veergu → 1 veerg mobiilil */
+/* ===================== MOBIILVAADE ===================== */
+/* Kuni 768px laiusel ekraanil (telefon) rakenduvad need reeglid */
 @media (max-width: 768px) {
+  /* Galerii läheb 3 veerult 1 veerule – kaardid üksteise alla */
   .gallery-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Hero tekst väiksem */
+  /* Hero alapealkiri natuke väiksem, et mahuks kitsamale ekraanile */
   .hero-subtitle {
     font-size: 1rem;
   }
 
-  /* Section pealkiri väiksem */
+  /* Sektsiooni pealkirjad natuke väiksemad mobiilil */
   .section-title {
     font-size: 2.2rem;
   }
 
-  /* Collapse menüü vertikaalselt */
+  /* Hamburgerist avatud menüü kuvatakse vertikaalselt, mitte horisontaalselt */
   .navbar-collapse .navbar-nav {
     flex-direction: column !important;
     gap: 0.5rem !important;
