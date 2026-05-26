@@ -197,6 +197,11 @@ select.custom-input {
 /*  MOBIILVAADE  */
 /* Kuni 768px laiusel ekraanil (telefon) rakenduvad need reeglid */
 @media (max-width: 768px) {
+  /* Eemaldame mobiilis suure taustapildi */
+  .hero {
+    background: #121212;
+    height: 50vh;
+  }
   /* Galerii läheb 3 veerult 1 veerule – kaardid üksteise alla */
   .gallery-grid {
     grid-template-columns: 1fr;
