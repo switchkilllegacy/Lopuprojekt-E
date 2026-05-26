@@ -1,4 +1,4 @@
-/*  ÜLDISED SEADED JA VÄRVID  */
+/*  ÜLDISED SEADED JA VÄRVID */
 /* CSS muutujad – kui tahad värvi muuta, piisab ühest kohast */
 :root {
   --primary: #cc2200; /* Punane põhivärv, kasutusel nuppudel ja pealkirjadel */
@@ -29,7 +29,7 @@ h3 {
   margin-bottom: 20px;
 }
 
-/* ===================== NAVIGATSIOON ===================== */
+/*  NAVIGATSIOON */
 /* Tume poolläbipaistev riba, punane joon all eristab sisu heroest */
 .navbar {
   background-color: rgba(13, 13, 13, 0.95);
@@ -48,7 +48,7 @@ h3 {
   color: var(--primary) !important;
 }
 
-/* ===================== HERO SEKTSIOON ===================== */
+/*  HERO SEKTSIOON */
 /* Kontserdifoto taustaks, tumendusgradiendiga et valge tekst loetav oleks */
 .hero {
   background:
@@ -73,7 +73,7 @@ h3 {
   color: var(--text-gray);
 }
 
-/* ===================== NUPP ===================== */
+/*  NUPP */
 /* 2. HOVER EFEKT: Täidetud punane nupp muutub läbipaistvaks punase äärisega */
 .btn-custom {
   background-color: var(--primary);
@@ -94,7 +94,7 @@ h3 {
   box-shadow: inset 0 0 0 2px var(--primary);
 }
 
-/* ===================== GALERII ===================== */
+/*  GALERII */
 /* CSS Grid paigutab bändikaardid automaatselt 3 võrdse laiusega veergu */
 .gallery-grid {
   display: grid;
@@ -131,7 +131,7 @@ h3 {
   color: var(--primary) !important;
 }
 
-/* ===================== AJALUGU – ACCORDION ===================== */
+/*  AJALUGU – ACCORDION */
 /* Avatud accordion nupp saab punase värvi, taust jääb läbipaistvaks */
 .accordion-button:not(.collapsed) {
   color: var(--primary) !important;
@@ -159,11 +159,15 @@ h3 {
 
 /* Bootstrap lisab vaikimisi sinise fookuskasti – eemaldame, sest see ei sobi disaini */
 .accordion-button:focus {
-  outline: none !important;
   box-shadow: none !important;
 }
 
-/* ===================== LIITUMISVORM ===================== */
+.accordion-button:focus-visible {
+  outline: 2px solid #24a0ed;
+  border-radius: 4px;
+}
+
+/*  LIITUMISVORM */
 /* Vorm on ekraani keskel, max-width hoiab selle loetavana laial ekraanil */
 .container-form {
   max-width: 600px;
@@ -185,12 +189,12 @@ h3 {
   box-shadow: 0 0 8px rgba(204, 34, 0, 0.4) !important;
 }
 
-/* Placeholder tekst on valge, et tumeda taustaga kontrasteeruks */
+/* Placeholder tekst on hall – valge oleks liiga lähedane täidetud välja tekstile */
 .custom-input::placeholder {
-  color: white !important;
+  color: #a0a0a0 !important;
 }
 
-/* ===================== TOAST TEAVITUS ===================== */
+/*  TOAST TEAVITUS */
 /* Väike hüpikaken ekraani nurgas, mis kinnitab edukat liitumist */
 .toast {
   background-color: #1a1a1a !important;
@@ -198,7 +202,7 @@ h3 {
   font-family: 'Inter', sans-serif;
 }
 
-/* ===================== MOBIILVAADE ===================== */
+/*  MOBIILVAADE  */
 /* Kuni 768px laiusel ekraanil (telefon) rakenduvad need reeglid */
 @media (max-width: 768px) {
   /* Galerii läheb 3 veerult 1 veerule – kaardid üksteise alla */
