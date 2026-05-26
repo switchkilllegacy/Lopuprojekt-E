@@ -14,14 +14,6 @@ body {
   line-height: 1.6;
 }
 
-/* Kõik pealkirjad saavad Bebas Neue fondi – annab rockile omase tunde */
-h1,
-h2,
-h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 2px;
-}
-
 /* Sektsiooni pealkirjad (nt "Legendaarsed Artistid") – suured ja punased */
 .section-title {
   font-size: 3rem;
@@ -174,13 +166,13 @@ h3 {
 }
 
 /* Kõik sisendväljad (tekst, email, select) jagavad sama tumeda stiili */
-.custom-input {
-  background-color: #1a1a1a !important;
-  border: 1px solid #333 !important;
-  color: #ffffff !important;
-  border-radius: 4px !important;
-  padding: 12px !important;
-  transition: all 0.3s ease;
+input.custom-input,
+select.custom-input {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 12px;
 }
 
 /* Fookuses saab väli punase äärise ja pehme punase kuma */
@@ -226,4 +218,21 @@ h3 {
     gap: 0.5rem !important;
     padding-bottom: 1rem;
   }
+}
+
+/* Fallback font mis sarnaneb Bebas Neue'ga, et tekst ei hüppaks */
+@font-face {
+  font-family: 'Bebas Neue Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  size-adjust: 92%;
+  ascent-override: 110%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+  letter-spacing: 2px;
 }
