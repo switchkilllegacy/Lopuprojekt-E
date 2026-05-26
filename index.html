@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Distortion Hub</title>
+    <!-- Lehe lühikirjeldus otsingumootoritele ja ligipääsetavusele -->
     <meta
       name="description"
       content="The Distortion Hub – su stardipakett rokkmuusikasse. Tutvu legendaarsete bändide, žanrite ajaloo ja kontsertinfoga."
     />
+    <!-- Preconnect vihjed – ütleb brauserile, et loo ühendus nende serveritega juba enne failide laadimist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <!-- Bootstrap – annab meile valmis komponendid ja grid süsteemi -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -22,7 +27,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!--  NAVIGATSIOON -->
+    <!--  NAVIGATSIOON  -->
     <!-- sticky-top hoiab menüü ekraani ülaosas ka alla kerides -->
     <nav class="navbar navbar-expand-md sticky-top">
       <div class="container">
@@ -63,401 +68,408 @@
       </div>
     </nav>
 
-    <!--  HERO  -->
-    <!-- Täisekraani sissejuhatus – taust on kontserdifoto, tekst on peal -->
-    <header class="hero">
-      <div class="container text-center">
-        <!-- Peamine pealkiri, font skaleerub ekraani järgi (clamp CSS-is) -->
-        <h1>AVASTA ROCK & METAL</h1>
-        <!-- Lühike kirjeldus, mis selgitab lehe eesmärki -->
-        <p class="hero-subtitle">
-          Su stardipakett rokkmuusikasse – bändid, lood, ajalugu
-        </p>
-        <!-- Nupp kerib kasutaja galerii sektsiooni juurde -->
-        <a href="#gallery" class="btn-custom">Tutvu bändidega</a>
-      </div>
-    </header>
-
-    <!--  GALERII  -->
-    <!-- Kolm bändikaarti CSS Grid'is kõrvuti (mobiilil üksteise all) -->
-    <section id="gallery" class="py-5">
-      <div class="container">
-        <h2 class="section-title text-center">Legendaarsed Artistid</h2>
-        <p class="text-center mb-5">
-          Rock ja metal ei ole ainult muusika – need on liikumised, mis muutsid
-          maailma. Tutvu kolme ikooni looga.
-        </p>
-
-        <!-- Grid paigutab kaardid automaatselt 3 veergu (vt style.css) -->
-        <div class="gallery-grid">
-          <!-- Bändikaart: Nirvana -->
-          <article class="band-card">
-            <!-- alt-tekst kirjeldab pilti ekraanilugejatele -->
-            <!-- width="100%" aitab brauseril pildi laadimist ette planeerida -->
-            <img
-              src="pildid/nirvana.jpeg"
-              alt="Nirvana bändi foto - Dave Grohl"
-              class="card-img-top"
-              width="100%"
-            />
-            <div class="card-body p-4">
-              <!-- Nimi on välislink Wikipediasse, avaneb uuel vahelehel -->
-              <h3>
-                <a
-                  href="https://en.wikipedia.org/wiki/Nirvana_(band)"
-                  target="_blank"
-                  class="text-white text-decoration-none artist-link"
-                  >Nirvana</a
-                >
-              </h3>
-              <p class="text-danger small fw-bold">GRUNGE / ALTERNATIVE ROCK</p>
-              <p>
-                Seattle'i trio, kes 1991. aastal albumiga
-                <em>Nevermind</em> muutis rockmuusika igaveseks. Kurt Cobain'i
-                karm laulustiil ja meloodilised riffid tegid neist kogu maailma
-                hääle.
-              </p>
-            </div>
-          </article>
-
-          <!-- Bändikaart: Ozzy Osbourne -->
-          <article class="band-card">
-            <img
-              src="pildid/ozzy.jpg"
-              alt="Ozzy Osbourne pilt"
-              class="card-img-top"
-              width="100%"
-            />
-            <div class="card-body p-4">
-              <h3>
-                <a
-                  href="https://en.wikipedia.org/wiki/Ozzy_Osbourne"
-                  target="_blank"
-                  class="text-white text-decoration-none artist-link"
-                  >Ozzy Osbourne</a
-                >
-              </h3>
-              <p class="text-danger small fw-bold">HEAVY METAL / HARD ROCK</p>
-              <p>
-                Black Sabbathi endine laulja ja "Metali Ristiisaks" tituleeritud
-                artist. Tema solokarjäär tõi maailmale hitte nagu
-                <em>Crazy Train</em> ja <em>Mr. Crowley</em>.
-              </p>
-            </div>
-          </article>
-
-          <!-- Bändikaart: Slipknot -->
-          <article class="band-card">
-            <img
-              src="pildid/slipknot.jpg"
-              alt="Slipknot bändi liikmed"
-              class="card-img-top"
-              width="100%"
-            />
-            <div class="card-body p-4">
-              <h3>
-                <a
-                  href="https://en.wikipedia.org/wiki/Slipknot_(band)"
-                  target="_blank"
-                  class="text-white text-decoration-none artist-link"
-                  >Slipknot</a
-                >
-              </h3>
-              <p class="text-danger small fw-bold">
-                NU-METAL / ALTERNATIVE METAL
-              </p>
-              <p>
-                Iowa üheksa liikmeline jõud, kelle sünge visuaalne identiteet ja
-                maruline muusika tegi neist 2000ndate ühe kõige mõjukaima
-                metal-bändi.
-              </p>
-            </div>
-          </article>
+    <main>
+      <!--  HERO  -->
+      <!-- Täisekraani sissejuhatus – taust on kontserdifoto, tekst on peal -->
+      <header class="hero">
+        <div class="container text-center">
+          <!-- Peamine pealkiri, font skaleerub ekraani järgi (clamp CSS-is) -->
+          <h1>AVASTA ROCK & METAL</h1>
+          <!-- Lühike kirjeldus, mis selgitab lehe eesmärki -->
+          <p class="hero-subtitle">
+            Su stardipakett rokkmuusikasse – bändid, lood, ajalugu
+          </p>
+          <!-- Nupp kerib kasutaja galerii sektsiooni juurde -->
+          <a href="#gallery" class="btn-custom">Tutvu bändidega</a>
         </div>
-      </div>
-    </section>
+      </header>
 
-    <!--  AJALUGU  -->
-    <!-- Hele taust eristab sektsiooni visuaalselt ülejäänud lehest -->
-    <section id="history" class="bg-light text-dark py-5">
-      <div class="container">
-        <div class="row align-items-start">
-          <!-- Vasakul: sissejuhatav tekst rokkmuusika ajaloost -->
-          <div class="col-md-7">
-            <h2 class="section-title text-dark">Ajalugu ja Mõju</h2>
-            <p>
-              Rock-muusika on olnud vabaduse sümbol juba aastakümneid. See sai
-              alguse 1950ndate <em>Rock and Roll</em>'ist ning on arenenud
-              lugematuteks alamžanriteks. Metali tulek 70ndatel lisas helipilti
-              raskust ja tehnilisust, pakkudes väljundit miljonitele
-              mässumeelsetele noortele.
-            </p>
-            <p>
-              Täna on need žanrid elavamad kui kunagi varem, ühendades inimesi
-              üle kogu maailma suurte festivalide ja kontserdielamuste kaudu.
-            </p>
-          </div>
+      <!--  GALERII  -->
+      <!-- Kolm bändikaarti CSS Grid'is kõrvuti (mobiilil üksteise all) -->
+      <section id="gallery" class="py-5">
+        <div class="container">
+          <h2 class="section-title text-center">Legendaarsed Artistid</h2>
+          <p class="text-center mb-5">
+            Rock ja metal ei ole ainult muusika – need on liikumised, mis
+            muutsid maailma. Tutvu kolme ikooni looga.
+          </p>
 
-          <!-- Paremal: accordion, kus iga žanr avaneb klikkides -->
-          <div class="col-md-5 mt-4 mt-md-0">
-            <!-- data-bs-parent tagab, et korraga on avatud ainult üks žanr -->
-            <div class="accordion accordion-flush" id="genreAccordion">
-              <!-- Žanr 1: Rock & Roll -->
-              <div class="accordion-item bg-transparent border-secondary">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed bg-transparent text-dark"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#genre1"
+          <!-- Grid paigutab kaardid automaatselt 3 veergu (vt style.css) -->
+          <div class="gallery-grid">
+            <!-- Bändikaart: Nirvana -->
+            <article class="band-card">
+              <!-- alt-tekst kirjeldab pilti ekraanilugejatele -->
+              <!-- width="100%" aitab brauseril pildi laadimist ette planeerida -->
+              <img
+                src="pildid/nirvana.webp"
+                alt="Nirvana bändi foto - Dave Grohl"
+                class="card-img-top"
+                width="100%"
+              />
+              <div class="card-body p-4">
+                <!-- Nimi on välislink Wikipediasse, avaneb uuel vahelehel -->
+                <h3>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Nirvana_(band)"
+                    target="_blank"
+                    class="text-white text-decoration-none artist-link"
+                    >Nirvana</a
                   >
-                    Rock & Roll — 1950ndad
-                  </button>
-                </h2>
-                <div
-                  id="genre1"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#genreAccordion"
-                >
-                  <div class="accordion-body text-secondary">
-                    Rokk-muusika algpunkt. Sündis bluusist ja rütmimuusikast –
-                    kitarr, bass, trummid ja palju energiat. Kõik hilisemad
-                    žanrid on sellest alguse saanud.
-                    <p class="text-danger small mt-2 mb-0">
-                      Chuck Berry, Elvis Presley
-                    </p>
-                  </div>
-                </div>
+                </h3>
+                <p class="text-danger small fw-bold">
+                  GRUNGE / ALTERNATIVE ROCK
+                </p>
+                <p>
+                  Seattle'i trio, kes 1991. aastal albumiga
+                  <em>Nevermind</em> muutis rockmuusika igaveseks. Kurt Cobain'i
+                  karm laulustiil ja meloodilised riffid tegid neist kogu
+                  maailma hääle.
+                </p>
               </div>
+            </article>
 
-              <!-- Žanr 2: Hard Rock -->
-              <div class="accordion-item bg-transparent border-secondary">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed bg-transparent text-dark"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#genre2"
+            <!-- Bändikaart: Ozzy Osbourne -->
+            <article class="band-card">
+              <img
+                src="pildid/ozzy.webp"
+                alt="Ozzy Osbourne pilt"
+                class="card-img-top"
+                width="100%"
+                loading="lazy"
+              />
+              <div class="card-body p-4">
+                <h3>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Ozzy_Osbourne"
+                    target="_blank"
+                    class="text-white text-decoration-none artist-link"
+                    >Ozzy Osbourne</a
                   >
-                    Hard Rock — 1960–70ndad
-                  </button>
-                </h2>
-                <div
-                  id="genre2"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#genreAccordion"
-                >
-                  <div class="accordion-body text-secondary">
-                    Valjum ja võimsam. Kitarr on kesksem, riffid tugevamad.
-                    AC/DC on ideaalne näide – lihtne aga plahvatuslik.
-                    <p class="text-danger small mt-2 mb-0">
-                      Led Zeppelin, AC/DC, Deep Purple
-                    </p>
-                  </div>
-                </div>
+                </h3>
+                <p class="text-danger small fw-bold">HEAVY METAL / HARD ROCK</p>
+                <p>
+                  Black Sabbathi endine laulja ja "Metali Ristiisaks"
+                  tituleeritud artist. Tema solokarjäär tõi maailmale hitte nagu
+                  <em>Crazy Train</em> ja <em>Mr. Crowley</em>.
+                </p>
               </div>
+            </article>
 
-              <!-- Žanr 3: Heavy Metal -->
-              <div class="accordion-item bg-transparent border-secondary">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed bg-transparent text-dark"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#genre3"
+            <!-- Bändikaart: Slipknot -->
+            <article class="band-card">
+              <img
+                src="pildid/slipknot.webp"
+                alt="Slipknot bändi liikmed"
+                class="card-img-top"
+                width="100%"
+                loading="lazy"
+              />
+              <div class="card-body p-4">
+                <h3>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Slipknot_(band)"
+                    target="_blank"
+                    class="text-white text-decoration-none artist-link"
+                    >Slipknot</a
                   >
-                    Heavy Metal — 1970ndad
-                  </button>
-                </h2>
-                <div
-                  id="genre3"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#genreAccordion"
-                >
-                  <div class="accordion-body text-secondary">
-                    Tumedam ja raskem. Black Sabbath leiutas žanri korduvate
-                    hüpnootiliste riffidega. Iron Maiden lisas kiired rütmid ja
-                    dramaatilise laulu.
-                    <p class="text-danger small mt-2 mb-0">
-                      Black Sabbath, Iron Maiden, Judas Priest
-                    </p>
-                  </div>
-                </div>
+                </h3>
+                <p class="text-danger small fw-bold">
+                  NU-METAL / ALTERNATIVE METAL
+                </p>
+                <p>
+                  Iowa üheksa liikmeline jõud, kelle sünge visuaalne identiteet
+                  ja maruline muusika tegi neist 2000ndate ühe kõige mõjukaima
+                  metal-bändi.
+                </p>
               </div>
-
-              <!-- Žanr 4: Grunge -->
-              <div class="accordion-item bg-transparent border-secondary">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed bg-transparent text-dark"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#genre4"
-                  >
-                    Grunge — 1990ndad
-                  </button>
-                </h2>
-                <div
-                  id="genre4"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#genreAccordion"
-                >
-                  <div class="accordion-body text-secondary">
-                    Seattle'i linna hääl. Ühendas metali riffid alternatiivrokki
-                    emotsiooniga. Nirvana valem: vaikne salm, plahvatav koor.
-                    <p class="text-danger small mt-2 mb-0">
-                      Nirvana, Pearl Jam, Soundgarden
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Žanr 5: Alternative Rock -->
-              <div class="accordion-item bg-transparent border-secondary">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed bg-transparent text-dark"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#genre5"
-                  >
-                    Alternative Rock — 1980–90ndad
-                  </button>
-                </h2>
-                <div
-                  id="genre5"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#genreAccordion"
-                >
-                  <div class="accordion-body text-secondary">
-                    Eksperimentaalsem ja mitmekesisem. Vahelduvad vaiksed ja
-                    valjud osad. Radiohead viis žanri elektrooniliste
-                    elementidega kaugemale.
-                    <p class="text-danger small mt-2 mb-0">
-                      Radiohead, Pixies, R.E.M.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Žanr 6: Nu-Metal -->
-              <div class="accordion-item bg-transparent border-secondary">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed bg-transparent text-dark"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#genre6"
-                  >
-                    Nu-Metal — 2000ndad
-                  </button>
-                </h2>
-                <div
-                  id="genre6"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#genreAccordion"
-                >
-                  <div class="accordion-body text-secondary">
-                    Segu metallist, hip-hopist ja elektroonikast. Sageli kaks
-                    lauljat: üks laulab, teine räpib.
-                    <p class="text-danger small mt-2 mb-0">
-                      Linkin Park, Slipknot, Korn
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
+      </section>
 
-        <!-- YouTube video rokkmuusika ajaloost, 16:9 kuvasuhe -->
-        <div class="row mt-5 pt-3">
-          <div class="col-12 col-lg-8 mx-auto">
-            <h3 class="text-center text-dark mb-4">
-              Vaata lähemalt: Rokkmuusika sünd ja areng
-            </h3>
-            <!-- ratio-16x9 tagab, et video skaleerub ekraaniga kaasa -->
-            <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
-              <iframe
-                src="https://www.youtube.com/embed/jjkXsvTHF_0"
-                title="The History of Rock Music Dokumentaalvideo"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                allowfullscreen
+      <!--  AJALUGU  -->
+      <!-- Hele taust eristab sektsiooni visuaalselt ülejäänud lehest -->
+      <section id="history" class="bg-light text-dark py-5">
+        <div class="container">
+          <div class="row align-items-start">
+            <!-- Vasakul: sissejuhatav tekst rokkmuusika ajaloost -->
+            <div class="col-md-7">
+              <h2 class="section-title text-dark">Ajalugu ja Mõju</h2>
+              <p>
+                Rock-muusika on olnud vabaduse sümbol juba aastakümneid. See sai
+                alguse 1950ndate <em>Rock and Roll</em>'ist ning on arenenud
+                lugematuteks alamžanriteks. Metali tulek 70ndatel lisas
+                helipilti raskust ja tehnilisust, pakkudes väljundit miljonitele
+                mässumeelsetele noortele.
+              </p>
+              <p>
+                Täna on need žanrid elavamad kui kunagi varem, ühendades inimesi
+                üle kogu maailma suurte festivalide ja kontserdielamuste kaudu.
+              </p>
+            </div>
+
+            <!-- Paremal: accordion, kus iga žanr avaneb klikkides -->
+            <div class="col-md-5 mt-4 mt-md-0">
+              <!-- data-bs-parent tagab, et korraga on avatud ainult üks žanr -->
+              <div class="accordion accordion-flush" id="genreAccordion">
+                <!-- Žanr 1: Rock & Roll -->
+                <div class="accordion-item bg-transparent border-secondary">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed bg-transparent text-dark"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#genre1"
+                    >
+                      Rock & Roll — 1950ndad
+                    </button>
+                  </h2>
+                  <div
+                    id="genre1"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#genreAccordion"
+                  >
+                    <div class="accordion-body text-secondary">
+                      Rokk-muusika algpunkt. Sündis bluusist ja rütmimuusikast –
+                      kitarr, bass, trummid ja palju energiat. Kõik hilisemad
+                      žanrid on sellest alguse saanud.
+                      <p class="text-danger small mt-2 mb-0">
+                        Chuck Berry, Elvis Presley
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Žanr 2: Hard Rock -->
+                <div class="accordion-item bg-transparent border-secondary">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed bg-transparent text-dark"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#genre2"
+                    >
+                      Hard Rock — 1960–70ndad
+                    </button>
+                  </h2>
+                  <div
+                    id="genre2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#genreAccordion"
+                  >
+                    <div class="accordion-body text-secondary">
+                      Valjum ja võimsam. Kitarr on kesksem, riffid tugevamad.
+                      AC/DC on ideaalne näide – lihtne aga plahvatuslik.
+                      <p class="text-danger small mt-2 mb-0">
+                        Led Zeppelin, AC/DC, Deep Purple
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Žanr 3: Heavy Metal -->
+                <div class="accordion-item bg-transparent border-secondary">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed bg-transparent text-dark"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#genre3"
+                    >
+                      Heavy Metal — 1970ndad
+                    </button>
+                  </h2>
+                  <div
+                    id="genre3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#genreAccordion"
+                  >
+                    <div class="accordion-body text-secondary">
+                      Tumedam ja raskem. Black Sabbath leiutas žanri korduvate
+                      hüpnootiliste riffidega. Iron Maiden lisas kiired rütmid
+                      ja dramaatilise laulu.
+                      <p class="text-danger small mt-2 mb-0">
+                        Black Sabbath, Iron Maiden, Judas Priest
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Žanr 4: Grunge -->
+                <div class="accordion-item bg-transparent border-secondary">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed bg-transparent text-dark"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#genre4"
+                    >
+                      Grunge — 1990ndad
+                    </button>
+                  </h2>
+                  <div
+                    id="genre4"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#genreAccordion"
+                  >
+                    <div class="accordion-body text-secondary">
+                      Seattle'i linna hääl. Ühendas metali riffid
+                      alternatiivrokki emotsiooniga. Nirvana valem: vaikne salm,
+                      plahvatav koor.
+                      <p class="text-danger small mt-2 mb-0">
+                        Nirvana, Pearl Jam, Soundgarden
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Žanr 5: Alternative Rock -->
+                <div class="accordion-item bg-transparent border-secondary">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed bg-transparent text-dark"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#genre5"
+                    >
+                      Alternative Rock — 1980–90ndad
+                    </button>
+                  </h2>
+                  <div
+                    id="genre5"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#genreAccordion"
+                  >
+                    <div class="accordion-body text-secondary">
+                      Eksperimentaalsem ja mitmekesisem. Vahelduvad vaiksed ja
+                      valjud osad. Radiohead viis žanri elektrooniliste
+                      elementidega kaugemale.
+                      <p class="text-danger small mt-2 mb-0">
+                        Radiohead, Pixies, R.E.M.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Žanr 6: Nu-Metal -->
+                <div class="accordion-item bg-transparent border-secondary">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed bg-transparent text-dark"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#genre6"
+                    >
+                      Nu-Metal — 2000ndad
+                    </button>
+                  </h2>
+                  <div
+                    id="genre6"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#genreAccordion"
+                  >
+                    <div class="accordion-body text-secondary">
+                      Segu metallist, hip-hopist ja elektroonikast. Sageli kaks
+                      lauljat: üks laulab, teine räpib.
+                      <p class="text-danger small mt-2 mb-0">
+                        Linkin Park, Slipknot, Korn
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- YouTube video rokkmuusika ajaloost, 16:9 kuvasuhe -->
+          <div class="row mt-5 pt-3">
+            <div class="col-12 col-lg-8 mx-auto">
+              <h3 class="text-center text-dark mb-4">
+                Vaata lähemalt: Rokkmuusika sünd ja areng
+              </h3>
+              <!-- ratio-16x9 tagab, et video skaleerub ekraaniga kaasa -->
+              <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/jjkXsvTHF_0"
+                  title="The History of Rock Music Dokumentaalvideo"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  LIITUMISVORM  -->
+      <!-- Uudiskirja vorm – kogub nime, e-posti ja lemmikžanri -->
+      <section id="join" class="py-5">
+        <div class="container container-form">
+          <h2 class="section-title text-center">JOIN THE PIT</h2>
+          <p class="text-center mb-4 opacity-75">
+            Saa värskeimad uudised, kontserdiinfo ja eksklusiivsed pakkumised
+            otse oma meilile.
+          </p>
+
+          <!-- novalidate – kasutame oma valideerimist, mitte brauseri vaikimisi -->
+          <form id="pitForm" novalidate>
+            <!-- Nime väli – kohustuslik -->
+            <div class="mb-3">
+              <label for="inputName" class="form-label text-white">Nimi</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="inputName"
+                placeholder="Sinu nimi"
+                required
+              />
+            </div>
+
+            <!-- E-posti väli – kohustuslik, brauser kontrollib formaati -->
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label text-white"
+                >E-maili aadress</label
               >
-              </iframe>
+              <input
+                type="email"
+                class="form-control custom-input"
+                id="inputEmail"
+                placeholder="Sinu e-post"
+                required
+              />
             </div>
-          </div>
+
+            <!-- Rippmenüü žanri valimiseks – valikuline -->
+            <div class="mb-4">
+              <label for="selectGenre" class="form-label text-white"
+                >Lemmikžanr</label
+              >
+              <select class="form-select custom-input" id="selectGenre">
+                <option selected disabled value="">Vali oma stiil...</option>
+                <option value="rock">Klassikaline Rock / Hard Rock</option>
+                <option value="heavy">Heavy Metal / Thrash Metal</option>
+                <option value="grunge">Grunge / Alternative</option>
+                <option value="nu">Nu-Metal / Core</option>
+              </select>
+            </div>
+
+            <!-- Esitusnupp – käivitab allpool oleva JS valideerimise -->
+            <button type="submit" class="btn-custom w-100 border-0">
+              Roki kaasa!
+            </button>
+          </form>
         </div>
-      </div>
-    </section>
-
-    <!--  LIITUMISVORM  -->
-    <!-- Uudiskirja vorm – kogub nime, e-posti ja lemmikžanri -->
-    <section id="join" class="py-5">
-      <div class="container container-form">
-        <h2 class="section-title text-center">JOIN THE PIT</h2>
-        <p class="text-center mb-4 opacity-75">
-          Saa värskeimad uudised, kontserdiinfo ja eksklusiivsed pakkumised otse
-          oma meilile.
-        </p>
-
-        <!-- novalidate – kasutame oma valideerimist, mitte brauseri vaikimisi -->
-        <form id="pitForm" novalidate>
-          <!-- Nime väli – kohustuslik -->
-          <div class="mb-3">
-            <label for="inputName" class="form-label text-white">Nimi</label>
-            <input
-              type="text"
-              class="form-control custom-input"
-              id="inputName"
-              placeholder="Sinu nimi"
-              required
-            />
-          </div>
-
-          <!-- E-posti väli – kohustuslik, brauser kontrollib formaati -->
-          <div class="mb-3">
-            <label for="inputEmail" class="form-label text-white"
-              >E-maili aadress</label
-            >
-            <input
-              type="email"
-              class="form-control custom-input"
-              id="inputEmail"
-              placeholder="Sinu e-post"
-              required
-            />
-          </div>
-
-          <!-- Rippmenüü žanri valimiseks – valikuline -->
-          <div class="mb-4">
-            <label for="selectGenre" class="form-label text-white"
-              >Lemmikžanr</label
-            >
-            <select class="form-select custom-input" id="selectGenre">
-              <option selected disabled value="">Vali oma stiil...</option>
-              <option value="rock">Klassikaline Rock / Hard Rock</option>
-              <option value="heavy">Heavy Metal / Thrash Metal</option>
-              <option value="grunge">Grunge / Alternative</option>
-              <option value="nu">Nu-Metal / Core</option>
-            </select>
-          </div>
-
-          <!-- Esitusnupp – käivitab allpool oleva JS valideerimise -->
-          <button type="submit" class="btn-custom w-100 border-0">
-            Roki kaasa!
-          </button>
-        </form>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!--  JALUS  -->
     <footer class="py-4 text-center border-top border-secondary opacity-50">
@@ -466,7 +478,7 @@
       <a href="#" class="text-white small">↑ Tagasi üles</a>
     </footer>
 
-    <!--  TOAST TEAVITUS -->
+    <!--  TOAST TEAVITUS  -->
     <!-- Ilmub ekraani paremasse allnurka pärast vormi edukat täitmist -->
     <div
       class="toast-container position-fixed bottom-0 end-0 p-3"
